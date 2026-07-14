@@ -1,4 +1,4 @@
-Function Main()
+FUNCTION Main()
     LOCAL cNome:= "Jos‚ Alberto"
     LOCAL cCidade:= "SÆo Paulo"
     LOCAL cCurso:= "Harbour/ADVPL"
@@ -12,4 +12,4 @@ Function Main()
     ? "Cidade: " + cCidade
     ? "Curso : " + cCurso
     ? "==========================="
-Return NIL
+RETURN NIL
