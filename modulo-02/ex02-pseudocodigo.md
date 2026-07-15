@@ -2,17 +2,20 @@
 
 ## a) Área de um retângulo
 
+```
 Início
     Leia Base
     Leia Altura
     Area <- Base * Altura
     Escreva "A área do retângulo é: ", Area
 Fim
+```
 
 ---
 
 ## b) Verificar se um número é par ou ímpar
 
+```
 Início
     Leia Numero
     Se (Numero % 2 = 0)
@@ -20,11 +23,13 @@ Início
     Senão
         Escreva "O número é ímpar"
 Fim
+```
 
 ---
 
 ## c) Encontrar o maior entre três números
 
+```
 Início
     Leia Numero1
     Leia Numero2
@@ -37,3 +42,4 @@ Início
     Senão
         Escreva "O maior número é: ", Numero3
 Fim
+```

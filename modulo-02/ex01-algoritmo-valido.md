@@ -2,8 +2,8 @@
 
 ## Critérios de validação
 
-Para cada situação abaixo, indique se é um
-algoritmo válido Se não for, explique por quê (lembre dos três requisitos: finito, ordenado e sem ambiguidade).
+Para cada situação abaixo, indique se é um algoritmo válido Se não for, 
+explique por quê (lembre dos três requisitos: finito, ordenado e sem ambiguidade).
 
 - **Finito** — possui fim definido
 - **Ordenado** — passos em sequência lógica correta
