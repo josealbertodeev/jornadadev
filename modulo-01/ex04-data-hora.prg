@@ -5,11 +5,13 @@ FUNCTION Main()
     LOCAL cCidade := "SÆo Paulo"
     LOCAL cCurso := "Harbour/ADVPL"
     LOCAL cIgual := "==========================="
-    LOCAL cData := DToC(Date())
-    LOCAL cHora := Time() 
+    LOCAL cData
+    LOCAL cHora := Time()
 
     hb_cdpSelect( "PT850" )
     hb_langSelect( "PT" )
+    SET DATE FORMAT TO "DD/MM/YYYY"
+    cData := DToC(Date())
 
     QOut(cIgual)
     QOut("  FICHA DE APRESENTACAO")
