@@ -1,14 +1,17 @@
 FUNCTION Main()
-    LOCAL cNomeFuncionario := "Rodolfo da Silva"
+
+    LOCAL cNomeFuncionario := "Rodolfo Silva"
     LOCAL nSalarioBruto    := 4500
     LOCAL lAtivo           := .T.
-    LOCAL dDataAdmissao    := STOD("20210415")
+    LOCAL dDataAdmissao
     LOCAL cCodDepartamento := "TI-01"
 
     SET DATE FORMAT TO "DD/MM/YYYY"
 
+    dDataAdmissao := CTOD("15/04/2021")
+
     QOut(cNomeFuncionario)
-    QOut(AllTrim(Str(nSalarioBruto, 10, 2)))
+    QOut("R$ " +AllTrim(Str(nSalarioBruto, 10, 2)) + " reais")
     QOut(lAtivo)
     QOut(dDataAdmissao)
     QOut(cCodDepartamento)
