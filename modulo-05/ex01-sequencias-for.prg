@@ -9,7 +9,7 @@ FUNCTION Main()
 
     Qout("")
     Qout("b) N£meros de -50 a 50:")
-    FOR nI := -50 TO 50
+    FOR nI := -50 TO 50 STEP -1
         Qout(NTOC(nI))
         PausaNaExecucao()
     NEXT
