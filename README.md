@@ -292,14 +292,6 @@ code .
 
 ---
 
-## 💡 Observações Importantes
-
-> ⚠️ **Requisitos:** Ambiente TOTVS Protheus 12 ou superior  
-> 📝 **Encoding:** Todos os arquivos em CP1252 (ANSI)  
-> 🔧 **Compilação:** Utilize o TDS (TOTVS Developer Studio)
-
----
-
 ## 📞 Contato
 
 <div align="center">
