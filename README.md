@@ -292,21 +292,13 @@ code .
 
 ---
 
-## 💡 Observações Importantes
-
-> ⚠️ **Requisitos:** Ambiente TOTVS Protheus 12 ou superior  
-> 📝 **Encoding:** Todos os arquivos em CP1252 (ANSI)  
-> 🔧 **Compilação:** Utilize o TDS (TOTVS Developer Studio)
-
----
-
 ## 📞 Contato
 
 <div align="center">
 
 **José Alberto**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/josealbertofarias/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github)](https://github.com/josealbertodeev)
 [![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:albertofarias07@hotmail.com)
 
