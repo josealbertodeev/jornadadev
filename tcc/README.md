@@ -1,6 +1,6 @@
 # TCC — Controle de Não Conformidades de Fornecedores (ISO 9001)
 
-**Curso:** TOTVS Paulista — Jornada DEV START (Harbour/AdvPL — Do Zero ao Protheus)
+**Curso:** TOTVS Paulista — Jornada DEV START (Harbour/AdvPL — Do Zero ao Protheus).
 
 **Aluno:** José Alberto  — [josealbertodeev](https://github.com/josealbertodeev)
 **Entrega individual.**

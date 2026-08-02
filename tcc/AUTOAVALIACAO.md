@@ -45,7 +45,7 @@ usados nos `.PRW` batem com os do dicionário em CSV.
   estável.
 - **Legenda colorida (mBrowse) e botão "Ocorrências" entre ZZ1 e ZZ2** —
   optei por `AxCadastro`, mais simples, para garantir que o núcleo mínimo
-  ficasse pronto com segurança dentro do prazo. A função `STTZZ2FLT` já
+  ficasse pronto com segurança dentro do prazo. A função `STTZZ2FLT`já
   deixa a base pronta para essa evolução, se eu tiver tempo de voltar nela.
 - **Integridade referencial na exclusão da ZZ1** e **classe ADVPL (POO)** —
   diferenciais que não cheguei a implementar.
