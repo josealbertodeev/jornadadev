@@ -50,15 +50,3 @@ usados nos `.PRW` batem com os do dicionário em CSV.
 - **Integridade referencial na exclusão da ZZ1** e **classe ADVPL (POO)** —
   diferenciais que não cheguei a implementar.
 
-## Autoavaliação por critério (peso da rubrica)
-
-| Critério | Peso | Minha avaliação |
-|---|---|---|
-| Dicionário (tabelas, índices, SX3) | 20% | Completo — estrutura, tipos e validações conferidos campo a campo |
-| Rotinas funcionais | 20% | AxCadastro funcional nas duas tabelas; sem legenda/filtro por botão |
-| Validações de dados | 15% | Completo — todas as 6 regras do enunciado, via SX3 |
-| Gatilhos automáticos | 10% | Completo — as 6 regras descritas no enunciado |
-| Tratamento de erros | 10% | Completo — BEGIN SEQUENCE nas duas rotinas |
-| Biblioteca de funções comuns | 10% | Completo — 5 funções, sem duplicação entre as rotinas |
-| Menu no SIGACOM | 5% | Completo — estrutura em CSV |
-| Documentação | 10% | Completo — este README e autoavaliação |

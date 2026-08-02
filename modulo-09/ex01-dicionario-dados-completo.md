@@ -1,29 +1,29 @@
-# Exerc°cio 1 ? Dicion†rio de Dados Completo (Bìnus/Autoestudo)
+# Exerc√≠cio 1 ? Dicion√°rio de Dados Completo (B√¥nus/Autoestudo)
 
-## ?? Objetivo
+## Objetivo
 
-Configurar no dicion†rio do Protheus as duas tabelas do projeto de **CRM/Gest∆o de Contatos**:
+Configurar no dicion√°rio do Protheus as duas tabelas do projeto de **CRM/Gest√£o de Contatos**:
 - **SZ1**: Cadastro de Contatos
-- **SZ2**: Interaá‰es com Contatos (hist¢rico de ligaá‰es, emails, reuni‰es, etc.)
+- **SZ2**: Intera√ß√µes com Contatos (hist√≥rico de liga√ß√µes, emails, reuni√µes, etc.)
 
 ---
 
-## ?? O que configurar
+## O que configurar
 
 ### 1. Tabelas no SX2 (Estrutura)
-### 2. Campos no SX3 (Definiá∆o de campos)
-### 3. ÷ndices no SIX (Chaves de acesso)
-### 4. Dom°nio no SX5 (Lista de tipos de interaá∆o)
+### 2. Campos no SX3 (Defini√ß√£o de campos)
+### 3. √çndices no SIX (Chaves de acesso)
+### 4. Dom√≠nio no SX5 (Lista de tipos de intera√ß√£o)
 
 ---
 
-## ??? Passo 1: Configurar Tabelas no SX2
+## Passo 1: Configurar Tabelas no SX2
 
 ### Acessar o Configurador
 ```
-Menu: Ambiente > Cadastros > Dicion†rio > Tabelas (SX2)
+Menu: Ambiente > Cadastros > Dicion√°rio > Tabelas (SX2)
 ou
-Configurador > Dicion†rio de Dados > Tabelas
+Configurador > Dicion√°rio de Dados > Tabelas
 ```
 
 ### Tabela SZ1 - Cadastro de Contatos
@@ -31,46 +31,46 @@ Configurador > Dicion†rio de Dados > Tabelas
 | Campo | Valor |
 |-------|-------|
 | **Tabela** | SZ1 |
-| **Descriá∆o** | Cadastro de Contatos |
+| **Descri√ß√£o** | Cadastro de Contatos |
 | **Modo de Acesso** | **Compartilhado** |
 | **Tipo** | Cliente |
 | **Aplicativo** | S = Sigamat |
 
 **Por que Compartilhado?**
-- Todos os contatos ficam dispon°veis para todas as filiais da empresa
-- Evita duplicaá∆o de dados
-- Facilita relat¢rios consolidados
+- Todos os contatos ficam dispon√≠veis para todas as filiais da empresa
+- Evita duplica√ß√£o de dados
+- Facilita relat√≥rios consolidados
 
 ---
 
-### Tabela SZ2 - Interaá‰es com Contatos
+### Tabela SZ2 - Intera√ß√µes com Contatos
 
 | Campo | Valor |
 |-------|-------|
 | **Tabela** | SZ2 |
-| **Descriá∆o** | Interaá‰es com Contatos |
+| **Descri√ß√£o** | Intera√ß√µes com Contatos |
 | **Modo de Acesso** | **Compartilhado** |
 | **Tipo** | Cliente |
 | **Aplicativo** | S = Sigamat |
 
 **Relacionamento:**
-- SZ2 Ç filho de SZ1 (1:N)
-- Um contato (SZ1) pode ter v†rias interaá‰es (SZ2)
+- SZ2 √© filho de SZ1 (1:N)
+- Um contato (SZ1) pode ter v√°rias intera√ß√µes (SZ2)
 
 ---
 
-## ?? Passo 2: Configurar Campos no SX3
+## Passo 2: Configurar Campos no SX3
 
 ### Acessar o Configurador
 ```
-Menu: Ambiente > Cadastros > Dicion†rio > Campos (SX3)
+Menu: Ambiente > Cadastros > Dicion√°rio > Campos (SX3)
 ou
-Configurador > Dicion†rio de Dados > Campos
+Configurador > Dicion√°rio de Dados > Campos
 ```
 
 ---
 
-### ? Campos da SZ1 (Contatos)
+### Campos da SZ1 (Contatos)
 
 #### Campo: Z1_FILIAL (Filial)
 | Propriedade | Valor |
@@ -79,8 +79,8 @@ Configurador > Dicion†rio de Dados > Campos
 | **Tipo** | Caractere |
 | **Tamanho** | 2 |
 | **Decimal** | 0 |
-| **T°tulo** | Filial |
-| **Descriá∆o** | Filial do Sistema |
+| **T√≠tulo** | Filial |
+| **Descri√ß√£o** | Filial do Sistema |
 | **Contexto** | **Real** |
 | **Inicializador** | xFilial("SZ1") |
 | **Uso** | Usado |
@@ -90,15 +90,15 @@ Configurador > Dicion†rio de Dados > Campos
 
 ---
 
-#### Campo: Z1_CODIGO (C¢digo do Contato)
+#### Campo: Z1_CODIGO (C√≥digo do Contato)
 | Propriedade | Valor |
 |-------------|-------|
 | **Campo** | Z1_CODIGO |
 | **Tipo** | Caractere |
 | **Tamanho** | 6 |
 | **Decimal** | 0 |
-| **T°tulo** | C¢digo |
-| **Descriá∆o** | C¢digo do Contato |
+| **T√≠tulo** | C√≥digo |
+| **Descri√ß√£o** | C√≥digo do Contato |
 | **Contexto** | **Real** |
 | **Inicializador** | GetSXENum("SZ1","Z1_CODIGO") |
 | **Valid** | ExistChav("SZ1",M->Z1_CODIGO) |
@@ -107,7 +107,7 @@ Configurador > Dicion†rio de Dados > Campos
 | **Browse** | Sim |
 | **Visual** | V |
 
-**GetSXENum:** Gera c¢digo sequencial autom†tico
+**GetSXENum:** Gera c√≥digo sequencial autom√°tico
 
 ---
 
@@ -118,8 +118,8 @@ Configurador > Dicion†rio de Dados > Campos
 | **Tipo** | Caractere |
 | **Tamanho** | 50 |
 | **Decimal** | 0 |
-| **T°tulo** | Nome |
-| **Descriá∆o** | Nome do Contato |
+| **T√≠tulo** | Nome |
+| **Descri√ß√£o** | Nome do Contato |
 | **Contexto** | **Real** |
 | **Uso** | Usado |
 | **Obrigat.** | Sim |
@@ -127,7 +127,7 @@ Configurador > Dicion†rio de Dados > Campos
 | **Visual** | A |
 | **Picture** | @! |
 
-**@!:** Converte para mai£sculas automaticamente
+**@!:** Converte para mai√∫sculas automaticamente
 
 ---
 
@@ -138,16 +138,16 @@ Configurador > Dicion†rio de Dados > Campos
 | **Tipo** | Caractere |
 | **Tamanho** | 100 |
 | **Decimal** | 0 |
-| **T°tulo** | Email |
-| **Descriá∆o** | Email do Contato |
+| **T√≠tulo** | Email |
+| **Descri√ß√£o** | Email do Contato |
 | **Contexto** | **Real** |
 | **Valid** | U_VALEMAIL(M->Z1_EMAIL) |
 | **Uso** | Usado |
-| **Obrigat.** | N∆o |
+| **Obrigat.** | N√£o |
 | **Browse** | Sim |
 | **Visual** | A |
 
-**VALEMAIL:** Funá∆o customizada para validar formato de email
+**VALEMAIL:** Fun√ß√£o customizada para validar formato de email
 
 ---
 
@@ -158,16 +158,16 @@ Configurador > Dicion†rio de Dados > Campos
 | **Tipo** | Caractere |
 | **Tamanho** | 20 |
 | **Decimal** | 0 |
-| **T°tulo** | Telefone |
-| **Descriá∆o** | Telefone do Contato |
+| **T√≠tulo** | Telefone |
+| **Descri√ß√£o** | Telefone do Contato |
 | **Contexto** | **Real** |
 | **Picture** | @R (99) 99999-9999 |
 | **Uso** | Usado |
-| **Obrigat.** | N∆o |
+| **Obrigat.** | N√£o |
 | **Browse** | Sim |
 | **Visual** | A |
 
-**@R:** M†scara de ediá∆o (formato de telefone)
+**@R:** M√°scara de edi√ß√£o (formato de telefone)
 
 ---
 
@@ -178,11 +178,11 @@ Configurador > Dicion†rio de Dados > Campos
 | **Tipo** | Caractere |
 | **Tamanho** | 100 |
 | **Decimal** | 0 |
-| **T°tulo** | Empresa |
-| **Descriá∆o** | Empresa do Contato |
+| **T√≠tulo** | Empresa |
+| **Descri√ß√£o** | Empresa do Contato |
 | **Contexto** | **Real** |
 | **Uso** | Usado |
-| **Obrigat.** | N∆o |
+| **Obrigat.** | N√£o |
 | **Browse** | Sim |
 | **Visual** | A |
 
@@ -195,11 +195,11 @@ Configurador > Dicion†rio de Dados > Campos
 | **Tipo** | Caractere |
 | **Tamanho** | 50 |
 | **Decimal** | 0 |
-| **T°tulo** | Cargo |
-| **Descriá∆o** | Cargo do Contato |
+| **T√≠tulo** | Cargo |
+| **Descri√ß√£o** | Cargo do Contato |
 | **Contexto** | **Real** |
 | **Uso** | Usado |
-| **Obrigat.** | N∆o |
+| **Obrigat.** | N√£o |
 | **Browse** | Sim |
 | **Visual** | A |
 
@@ -212,8 +212,8 @@ Configurador > Dicion†rio de Dados > Campos
 | **Tipo** | Data |
 | **Tamanho** | 8 |
 | **Decimal** | 0 |
-| **T°tulo** | Dt. Cadastro |
-| **Descriá∆o** | Data de Cadastro |
+| **T√≠tulo** | Dt. Cadastro |
+| **Descri√ß√£o** | Data de Cadastro |
 | **Contexto** | **Real** |
 | **Inicializador** | dDataBase |
 | **Uso** | Usado |
@@ -230,28 +230,28 @@ Configurador > Dicion†rio de Dados > Campos
 | **Tipo** | Caractere |
 | **Tamanho** | 20 |
 | **Decimal** | 0 |
-| **T°tulo** | Status |
-| **Descriá∆o** | Status do Contato |
+| **T√≠tulo** | Status |
+| **Descri√ß√£o** | Status do Contato |
 | **Contexto** | **Virtual** |
 | **Inicializador** | U_SZ1STATUS() |
 | **Uso** | Usado |
 | **Browse** | Sim |
 | **Visual** | V |
 
-**Campo Virtual:** Calculado em tempo real, n∆o gravado no banco
+**Campo Virtual:** Calculado em tempo real, n√£o gravado no banco
 
-**Funá∆o U_SZ1STATUS():**
+**Fun√ß√£o U_SZ1STATUS():**
 ```advpl
 USER FUNCTION SZ1STATUS()
     LOCAL cStatus := "Ativo"
     LOCAL nDias := 0
     LOCAL dUltimaInt := CTOD("//")
     
-    // Busca data da £ltima interaá∆o
+    // Busca data da √∫ltima intera√ß√£o
     dbSelectArea("SZ2")
     dbSetOrder(1) // Z2_FILIAL + Z2_CONTAT
     IF dbSeek(xFilial("SZ2") + SZ1->Z1_CODIGO)
-        // Percorre atÇ achar a mais recente
+        // Percorre at√© achar a mais recente
         WHILE !EOF() .AND. SZ2->Z2_CONTAT == SZ1->Z1_CODIGO
             IF SZ2->Z2_DATA > dUltimaInt
                 dUltimaInt := SZ2->Z2_DATA
@@ -261,7 +261,7 @@ USER FUNCTION SZ1STATUS()
     ENDIF
     
     IF Empty(dUltimaInt)
-        cStatus := "Sem Interaá∆o"
+        cStatus := "Sem Intera√ß√£o"
     ELSE
         nDias := dDataBase - dUltimaInt
         IF nDias > 90
@@ -280,15 +280,15 @@ RETURN cStatus
 
 ---
 
-#### Campo: Z1_ULTINT (Èltima Interaá∆o) - **VIRTUAL**
+#### Campo: Z1_ULTINT (√öltima Intera√ß√£o) - **VIRTUAL**
 | Propriedade | Valor |
 |-------------|-------|
 | **Campo** | Z1_ULTINT |
 | **Tipo** | Data |
 | **Tamanho** | 8 |
 | **Decimal** | 0 |
-| **T°tulo** | Èlt. Interaá∆o |
-| **Descriá∆o** | Data da Èltima Interaá∆o |
+| **T√≠tulo** | √ölt. Intera√ß√£o |
+| **Descri√ß√£o** | Data da √öltima Intera√ß√£o |
 | **Contexto** | **Virtual** |
 | **Inicializador** | U_SZ1ULTINT() |
 | **Uso** | Usado |
@@ -297,7 +297,7 @@ RETURN cStatus
 
 ---
 
-### ? Campos da SZ2 (Interaá‰es)
+### Campos da SZ2 (Intera√ß√µes)
 
 #### Campo: Z2_FILIAL (Filial)
 | Propriedade | Valor |
@@ -306,8 +306,8 @@ RETURN cStatus
 | **Tipo** | Caractere |
 | **Tamanho** | 2 |
 | **Decimal** | 0 |
-| **T°tulo** | Filial |
-| **Descriá∆o** | Filial do Sistema |
+| **T√≠tulo** | Filial |
+| **Descri√ß√£o** | Filial do Sistema |
 | **Contexto** | **Real** |
 | **Inicializador** | xFilial("SZ2") |
 | **Uso** | Usado |
@@ -317,15 +317,15 @@ RETURN cStatus
 
 ---
 
-#### Campo: Z2_CONTAT (C¢digo do Contato)
+#### Campo: Z2_CONTAT (C√≥digo do Contato)
 | Propriedade | Valor |
 |-------------|-------|
 | **Campo** | Z2_CONTAT |
 | **Tipo** | Caractere |
 | **Tamanho** | 6 |
 | **Decimal** | 0 |
-| **T°tulo** | Contato |
-| **Descriá∆o** | C¢digo do Contato |
+| **T√≠tulo** | Contato |
+| **Descri√ß√£o** | C√≥digo do Contato |
 | **Contexto** | **Real** |
 | **Valid** | ExistCpo("SZ1",M->Z2_CONTAT) |
 | **F3** | SZ1 |
@@ -334,19 +334,19 @@ RETURN cStatus
 | **Browse** | Sim |
 | **Visual** | A |
 
-**F3:** Consulta padr∆o para buscar contatos
+**F3:** Consulta padr√£o para buscar contatos
 
 ---
 
-#### Campo: Z2_SEQUEN (Sequància)
+#### Campo: Z2_SEQUEN (Sequ√™ncia)
 | Propriedade | Valor |
 |-------------|-------|
 | **Campo** | Z2_SEQUEN |
 | **Tipo** | Caractere |
 | **Tamanho** | 3 |
 | **Decimal** | 0 |
-| **T°tulo** | Sequància |
-| **Descriá∆o** | Sequància da Interaá∆o |
+| **T√≠tulo** | Sequ√™ncia |
+| **Descri√ß√£o** | Sequ√™ncia da Intera√ß√£o |
 | **Contexto** | **Real** |
 | **Inicializador** | U_PROXSEQ() |
 | **Uso** | Usado |
@@ -354,19 +354,19 @@ RETURN cStatus
 | **Browse** | Sim |
 | **Visual** | V |
 
-**U_PROXSEQ():** Calcula pr¢ximo n£mero de sequància para o contato
+**U_PROXSEQ():** Calcula pr√≥ximo n√∫mero de sequ√™ncia para o contato
 
 ---
 
-#### Campo: Z2_DATA (Data da Interaá∆o)
+#### Campo: Z2_DATA (Data da Intera√ß√£o)
 | Propriedade | Valor |
 |-------------|-------|
 | **Campo** | Z2_DATA |
 | **Tipo** | Data |
 | **Tamanho** | 8 |
 | **Decimal** | 0 |
-| **T°tulo** | Data |
-| **Descriá∆o** | Data da Interaá∆o |
+| **T√≠tulo** | Data |
+| **Descri√ß√£o** | Data da Intera√ß√£o |
 | **Contexto** | **Real** |
 | **Inicializador** | dDataBase |
 | **Uso** | Usado |
@@ -376,15 +376,15 @@ RETURN cStatus
 
 ---
 
-#### Campo: Z2_HORA (Hora da Interaá∆o)
+#### Campo: Z2_HORA (Hora da Intera√ß√£o)
 | Propriedade | Valor |
 |-------------|-------|
 | **Campo** | Z2_HORA |
 | **Tipo** | Caractere |
 | **Tamanho** | 5 |
 | **Decimal** | 0 |
-| **T°tulo** | Hora |
-| **Descriá∆o** | Hora da Interaá∆o |
+| **T√≠tulo** | Hora |
+| **Descri√ß√£o** | Hora da Intera√ß√£o |
 | **Contexto** | **Real** |
 | **Inicializador** | Time() |
 | **Picture** | @R 99:99 |
@@ -395,17 +395,17 @@ RETURN cStatus
 
 ---
 
-#### Campo: Z2_TIPO (Tipo de Interaá∆o)
+#### Campo: Z2_TIPO (Tipo de Intera√ß√£o)
 | Propriedade | Valor |
 |-------------|-------|
 | **Campo** | Z2_TIPO |
 | **Tipo** | Caractere |
 | **Tamanho** | 1 |
 | **Decimal** | 0 |
-| **T°tulo** | Tipo |
-| **Descriá∆o** | Tipo de Interaá∆o |
+| **T√≠tulo** | Tipo |
+| **Descri√ß√£o** | Tipo de Intera√ß√£o |
 | **Contexto** | **Real** |
-| **Combo** | E=Email;L=Ligaá∆o;R=Reuni∆o;V=Visita;W=WhatsApp |
+| **Combo** | E=Email;L=Liga√ß√£o;R=Reuni√£o;V=Visita;W=WhatsApp |
 | **F3** | Z2 |
 | **Uso** | Usado |
 | **Obrigat.** | Sim |
@@ -414,22 +414,22 @@ RETURN cStatus
 
 ---
 
-#### Campo: Z2_TIPODES (Descriá∆o do Tipo) - **VIRTUAL**
+#### Campo: Z2_TIPODES (Descri√ß√£o do Tipo) - **VIRTUAL**
 | Propriedade | Valor |
 |-------------|-------|
 | **Campo** | Z2_TIPODES |
 | **Tipo** | Caractere |
 | **Tamanho** | 20 |
 | **Decimal** | 0 |
-| **T°tulo** | Desc. Tipo |
-| **Descriá∆o** | Descriá∆o do Tipo |
+| **T√≠tulo** | Desc. Tipo |
+| **Descri√ß√£o** | Descri√ß√£o do Tipo |
 | **Contexto** | **Virtual** |
 | **Inicializador** | X5Descri() |
 | **Uso** | Usado |
 | **Browse** | Sim |
 | **Visual** | V |
 
-**X5Descri():** Busca descriá∆o na tabela SX5
+**X5Descri():** Busca descri√ß√£o na tabela SX5
 
 ---
 
@@ -440,8 +440,8 @@ RETURN cStatus
 | **Tipo** | Caractere |
 | **Tamanho** | 100 |
 | **Decimal** | 0 |
-| **T°tulo** | Assunto |
-| **Descriá∆o** | Assunto da Interaá∆o |
+| **T√≠tulo** | Assunto |
+| **Descri√ß√£o** | Assunto da Intera√ß√£o |
 | **Contexto** | **Real** |
 | **Uso** | Usado |
 | **Obrigat.** | Sim |
@@ -450,34 +450,34 @@ RETURN cStatus
 
 ---
 
-#### Campo: Z2_DESCRIC (Descriá∆o)
+#### Campo: Z2_DESCRIC (Descri√ß√£o)
 | Propriedade | Valor |
 |-------------|-------|
 | **Campo** | Z2_DESCRIC |
 | **Tipo** | Memo |
 | **Tamanho** | 10 |
 | **Decimal** | 0 |
-| **T°tulo** | Descriá∆o |
-| **Descriá∆o** | Descriá∆o Detalhada |
+| **T√≠tulo** | Descri√ß√£o |
+| **Descri√ß√£o** | Descri√ß√£o Detalhada |
 | **Contexto** | **Real** |
 | **Uso** | Usado |
-| **Obrigat.** | N∆o |
-| **Browse** | N∆o |
+| **Obrigat.** | N√£o |
+| **Browse** | N√£o |
 | **Visual** | A |
 
 **Tipo Memo:** Campo texto longo (armazenado em tabela auxiliar)
 
 ---
 
-#### Campo: Z2_USUARIO (Usu†rio)
+#### Campo: Z2_USUARIO (Usu√°rio)
 | Propriedade | Valor |
 |-------------|-------|
 | **Campo** | Z2_USUARIO |
 | **Tipo** | Caractere |
 | **Tamanho** | 15 |
 | **Decimal** | 0 |
-| **T°tulo** | Usu†rio |
-| **Descriá∆o** | Usu†rio que Registrou |
+| **T√≠tulo** | Usu√°rio |
+| **Descri√ß√£o** | Usu√°rio que Registrou |
 | **Contexto** | **Real** |
 | **Inicializador** | RetCodUsr() |
 | **Uso** | Usado |
@@ -485,130 +485,130 @@ RETURN cStatus
 | **Browse** | Sim |
 | **Visual** | V |
 
-**RetCodUsr():** Retorna c¢digo do usu†rio logado
+**RetCodUsr():** Retorna c√≥digo do usu√°rio logado
 
 ---
 
-## ?? Passo 3: Configurar ÷ndices no SIX
+##  Passo 3: Configurar √çndices no SIX
 
 ### Acessar o Configurador
 ```
-Menu: Ambiente > Cadastros > Dicion†rio > ÷ndices (SIX)
+Menu: Ambiente > Cadastros > Dicion√°rio > √çndices (SIX)
 ou
-Configurador > Dicion†rio de Dados > ÷ndices
+Configurador > Dicion√°rio de Dados > √çndices
 ```
 
 ---
 
-### ? ÷ndices da SZ1
+### √çndices da SZ1
 
-#### ÷ndice 1 (Ordem 1)
+#### √çndice 1 (Ordem 1)
 | Propriedade | Valor |
 |-------------|-------|
 | **Tabela** | SZ1 |
 | **Ordem** | 1 |
 | **Chave** | Z1_FILIAL+Z1_CODIGO |
-| **Descriá∆o** | Filial + C¢digo |
+| **Descri√ß√£o** | Filial + C√≥digo |
 | **Apelidocpo** | Z1_FILIAL;Z1_CODIGO |
-| **Ènico** | Sim |
+| **√önico** | Sim |
 
-**÷ndice Ènico:** Garante que n∆o haja c¢digos duplicados
+**√çndice √önico:** Garante que n√£o haja c√≥digos duplicados
 
 ---
 
-#### ÷ndice 2 (Ordem 2) - Opcional
+#### √çndice 2 (Ordem 2) - Opcional
 | Propriedade | Valor |
 |-------------|-------|
 | **Tabela** | SZ1 |
 | **Ordem** | 2 |
 | **Chave** | Z1_FILIAL+Z1_NOME |
-| **Descriá∆o** | Filial + Nome |
+| **Descri√ß√£o** | Filial + Nome |
 | **Apelidocpo** | Z1_FILIAL;Z1_NOME |
-| **Ènico** | N∆o |
+| **√önico** | N√£o |
 
-**÷ndice por Nome:** Facilita pesquisas alfabÇticas
+**√çndice por Nome:** Facilita pesquisas alfab√©ticas
 
 ---
 
-### ? ÷ndices da SZ2
+### √çndices da SZ2
 
-#### ÷ndice 1 (Ordem 1)
+#### √çndice 1 (Ordem 1)
 | Propriedade | Valor |
 |-------------|-------|
 | **Tabela** | SZ2 |
 | **Ordem** | 1 |
 | **Chave** | Z2_FILIAL+Z2_CONTAT+Z2_SEQUEN |
-| **Descriá∆o** | Filial + Contato + Sequància |
+| **Descri√ß√£o** | Filial + Contato + Sequ√™ncia |
 | **Apelidocpo** | Z2_FILIAL;Z2_CONTAT;Z2_SEQUEN |
-| **Ènico** | Sim |
+| **√önico** | Sim |
 
-**Relacionamento:** Este °ndice permite buscar todas as interaá‰es de um contato
+**Relacionamento:** Este √≠ndice permite buscar todas as intera√ß√µes de um contato
 
 ---
 
-#### ÷ndice 2 (Ordem 2) - Opcional
+#### √çndice 2 (Ordem 2) - Opcional
 | Propriedade | Valor |
 |-------------|-------|
 | **Tabela** | SZ2 |
 | **Ordem** | 2 |
 | **Chave** | Z2_FILIAL+DTOS(Z2_DATA)+Z2_HORA |
-| **Descriá∆o** | Filial + Data + Hora |
+| **Descri√ß√£o** | Filial + Data + Hora |
 | **Apelidocpo** | Z2_FILIAL;Z2_DATA;Z2_HORA |
-| **Ènico** | N∆o |
+| **√önico** | N√£o |
 
-**÷ndice Cronol¢gico:** Facilita listagens por data
+**√çndice Cronol√≥gico:** Facilita listagens por data
 
 ---
 
-## ?? Passo 4: Configurar Dom°nio no SX5
+## Passo 4: Configurar Dom√≠nio no SX5
 
 ### Acessar o Configurador
 ```
-Menu: Ambiente > Cadastros > Tabelas GenÇricas (SX5)
+Menu: Ambiente > Cadastros > Tabelas Gen√©ricas (SX5)
 ou
-Configurador > Dicion†rio de Dados > Tabelas GenÇricas
+Configurador > Dicion√°rio de Dados > Tabelas Gen√©ricas
 ```
 
 ---
 
-### ? Dom°nio Z2 - Tipos de Interaá∆o
+### Dom√≠nio Z2 - Tipos de Intera√ß√£o
 
 #### Incluir Tabela Z2
 | Propriedade | Valor |
 |-------------|-------|
 | **Tabela** | Z2 |
-| **Descriá∆o** | Tipos de Interaá∆o com Contatos |
+| **Descri√ß√£o** | Tipos de Intera√ß√£o com Contatos |
 
 ---
 
 #### Itens da Tabela Z2
 
-| Chave | Descriá∆o (Portuguàs) | Descriá∆o (Inglàs) | Descriá∆o (Espanhol) |
+| Chave | Descri√ß√£o (Portugu√™s) | Descri√ß√£o (Ingl√™s) | Descri√ß√£o (Espanhol) |
 |-------|------------------------|---------------------|----------------------|
 | **E** | Email | Email | Email |
-| **L** | Ligaá∆o | Call | Llamada |
-| **R** | Reuni∆o | Meeting | Reuni¢n |
+| **L** | Liga√ß√£o | Call | Llamada |
+| **R** | Reuni√£o | Meeting | Reuni√≥n |
 | **V** | Visita | Visit | Visita |
 | **W** | WhatsApp | WhatsApp | WhatsApp |
 
 ---
 
-## ? Resumo da Configuraá∆o
+## Resumo da Configura√ß√£o
 
 ### Tabelas Criadas
-- ? **SZ1** (Modo Compartilhado) - Cadastro de Contatos
-- ? **SZ2** (Modo Compartilhado) - Interaá‰es
+-  **SZ1** (Modo Compartilhado) - Cadastro de Contatos
+- **SZ2** (Modo Compartilhado) - Intera√ß√µes
 
 ### Campos Criados
-- ? **SZ1**: 9 campos (7 reais + 2 virtuais)
-- ? **SZ2**: 10 campos (8 reais + 1 virtual + 1 memo)
+- **SZ1**: 9 campos (7 reais + 2 virtuais)
+- **SZ2**: 10 campos (8 reais + 1 virtual + 1 memo)
 
-### ÷ndices Criados
-- ? **SZ1**: Ordem 1 (Z1_FILIAL + Z1_CODIGO)
-- ? **SZ2**: Ordem 1 (Z2_FILIAL + Z2_CONTAT + Z2_SEQUEN)
+### √çndices Criados
+- **SZ1**: Ordem 1 (Z1_FILIAL + Z1_CODIGO)
+- **SZ2**: Ordem 1 (Z2_FILIAL + Z2_CONTAT + Z2_SEQUEN)
 
-### Dom°nio Criado
-- ? **SX5 - Z2**: 5 tipos de interaá∆o (E, L, R, V, W)
+### Dom√≠nio Criado
+- **SX5 - Z2**: 5 tipos de intera√ß√£o (E, L, R, V, W)
 
 ---
 

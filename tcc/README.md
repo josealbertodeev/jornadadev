@@ -154,33 +154,3 @@ Cadastros
      └── Ocorrências de Fornecedores (ZZ2) → USER FUNCTION STTZZ2
 ```
 
-## 9. Como instalar (quando o ambiente estiver disponível)
-
-1. Importar a estrutura das tabelas `ZZ1` e `ZZ2` no Configurador
-   (Base de Dados → Dicionário → Base de Dados → Incluir), usando os campos e
-   índices descritos em `SX2_Tabelas.csv`, `SX3_Campos.csv` e `SIX_Indices.csv`.
-2. Cadastrar os 6 gatilhos listados em `SX7_Gatilhos.csv`
-   (Base de Dados → Dicionário → Gatilhos).
-3. Compilar `STTZZLIB.PRW`, `STTZZ1.PRW` e `STTZZ2.PRW` no ambiente (a ordem
-   importa: `STTZZLIB.PRW` primeiro, porque as outras duas dependem da função
-   `U_GravarLogTCC`).
-4. Acessar via `STTZZ1` (Controle de Fornecimento) e `STTZZ2` (Ocorrências do
-   Fornecedor).
-
-> ⚠️ Durante o desenvolvimento, reiniciar o AppServer depois de alterar o
-> dicionário se mostrou necessário para que os gatilhos reconhecessem os
-> campos novos — vale testar isso se surgir o erro "NOMECPO" ao cadastrar
-> gatilhos logo após criar uma tabela.
-
-## 10. O que ainda não foi implementado
-
-Para deixar claro o que é núcleo mínimo (entregue) e o que é diferencial
-(parcialmente entregue):
-
-- ✅ Dicionário completo (ZZ1 + ZZ2), rotinas de manutenção, validações,
-  gatilhos, tratamento de erros, biblioteca de funções.
-- ⬜ Legenda colorida por mBrowse (comparação de % não conforme vs.
-  `ZZ1_TOLERA`) — as rotinas atuais usam `AxCadastro`, mais simples.
-- ⬜ Integridade referencial na exclusão (impedir apagar uma ZZ1 com ZZ2
-  vinculada).
-- ⬜ Classe ADVPL (POO).

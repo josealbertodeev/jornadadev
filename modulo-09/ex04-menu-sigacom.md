@@ -410,47 +410,6 @@ mBrowse(...)
 
 ---
 
-## 🔄 Comparação: STTIP004 vs STTIP004B
-
-| Aspecto | STTIP004 | STTIP004B |
-|---------|----------|-----------|
-| **Filtro** | Sim (por contato) | Não (todas) |
-| **Chamada** | Via botão STTIP003 | Via menu |
-| **Parâmetros** | cCodContato, cNomeContato | Nenhum |
-| **Inclusão** | U_STTIP004INC (fixo) | AxInclui (livre) |
-| **Título** | "Interações - Contato: XXX" | "Interações - Listagem Geral" |
-| **Z2_CONTAT** | Bloqueado (fixo) | Editável (F3) |
-| **Botão Extra** | - | "Contato" (ver SZ1) |
-| **Contexto** | Operação focada | Visão geral |
-
----
-
-## ✅ Checklist de Implementação
-
-- [ ] **Código:**
-  - [ ] STTIP004B.PRW criado
-  - [ ] STTIP004B.PRW compilado
-  - [ ] U_STTIP004BCONT() implementada
-
-- [ ] **Menu:**
-  - [ ] Acessar SIGACFG > Menu do Sistema
-  - [ ] Selecionar módulo SIGACOM
-  - [ ] Criar/Localizar submenu "Cadastros"
-  - [ ] Adicionar opção "Contatos" (U_STTIP003)
-  - [ ] Adicionar opção "Interações" (U_STTIP004B)
-  - [ ] Atualizar menus no sistema
-
-- [ ] **Testes:**
-  - [ ] Menu > Cadastros > Contatos abre STTIP003
-  - [ ] Menu > Cadastros > Interações abre STTIP004B
-  - [ ] STTIP004B mostra todas as interações
-  - [ ] Botão "Contato" abre visualização do SZ1
-  - [ ] Inclusão via STTIP004B funciona (contato livre)
-  - [ ] F3 em Z2_CONTAT funciona
-  - [ ] Validações e gatilhos funcionam
-
----
-
 ## 🎯 Resumo Visual
 
 ### Estrutura Completa do Sistema:

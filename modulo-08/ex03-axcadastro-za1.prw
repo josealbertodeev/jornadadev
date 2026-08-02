@@ -52,39 +52,3 @@ USER FUNCTION STTIP001()
 
 RETURN NIL
 
-
-//=============================================================================
-// OBSERVAÇÕES IMPORTANTES
-//=============================================================================
-//
-// 1. O AxCadastro cria automaticamente:
-//    - Browse com listagem dos pets
-//    - Botões: Pesquisar, Visualizar, Incluir, Alterar, Excluir
-//    - Formulário de inclusão/alteração com todos os campos do SX3
-//    - Validações configuradas no dicionário (SX3)
-//
-// 2. Campo Virtual ZA1_NOMCLI:
-//    - Aparece no formulário mas NÃO é gravado
-//    - É calculado automaticamente pela relação no SX3:
-//      POSICIONE("SA1",1,xFilial("SA1")+M->ZA1_CLIENT+M->ZA1_LOJA,"A1_NOME")
-//    - Mostra o nome do cliente (dono) assim que ZA1_CLIENT e ZA1_LOJA 
-//      são preenchidos
-//
-// 3. Validações:
-//    - Se configurou ExistCpo no X3_VALID de ZA1_CLIENT, o sistema valida
-//      automaticamente se o cliente existe na SA1
-//    - Se configurou ExistChav no X3_VALID de ZA1_COD, o sistema impede
-//      códigos duplicados
-//
-// 4. Para incluir no menu do Protheus:
-//    - Abrir Configurador > Menu do Sistema
-//    - Selecionar o módulo (ex: SIGACOM)
-//    - Incluir item: Texto = "Pets", Função = STTIP001
-//
-// 5. Próximos passos (exercícios seguintes):
-//    - Ex. 4: Adicionar validação com ExistCpo
-//    - Ex. 5: Refazer com mBrowse (mais profissional)
-//    - Ex. 6: Adicionar legendas coloridas
-//    - Ex. 7: Configurar gatilho do CEP
-//
-//=============================================================================

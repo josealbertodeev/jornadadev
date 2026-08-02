@@ -1,14 +1,5 @@
 # Exercício 3 — Gatilhos, Campos Virtuais e Validações Cruzadas (Bônus)
 
-## 📋 Objetivo
-
-Deixar o sistema **"esperto"** com funcionalidades automáticas:
-- ✅ **Campos virtuais** que buscam dados relacionados
-- ✅ **Gatilhos automáticos** que preenchem campos sozinhos
-- ✅ **Validações cruzadas** que garantem integridade referencial
-
----
-
 ## 🎯 O que será configurado
 
 ### 1️⃣ Campos Virtuais na SZ2
@@ -555,72 +546,3 @@ O browse de interações agora deve mostrar:
 
 ---
 
-## 🚀 Melhorias Opcionais
-
-### 1️⃣ Validação de Data
-
-Não permitir interações futuras:
-
-```advpl
-// Campo: Z2_DATA
-// X3_VALID:
-M->Z2_DATA <= dDataBase
-```
-
----
-
-### 2️⃣ Campo Virtual: Dias Desde Interação
-
-```advpl
-// Campo: Z2_DIASDEC (Virtual)
-// X3_RELACAO:
-Date() - SZ2->Z2_DATA
-```
-
----
-
-### 3️⃣ Gatilho: Atualizar Última Interação em SZ1
-
-```advpl
-// Campo Origem: Z2_DATA
-// Campo Destino: Z1_ULTINT (criar campo na SZ1)
-// Regra: M->Z2_DATA
-// Fase: 4 (após gravar)
-// Condição: .T.
-```
-
----
-
-## ✅ Checklist de Configuração
-
-- [ ] **SX3 - Campos Virtuais:**
-  - [ ] Z2_NOMCONT (Nome do Contato)
-  - [ ] Z2_EMAILCONT (Email do Contato)
-  - [ ] Z2_NOMUSR (Nome do Usuário)
-
-- [ ] **SX7 - Gatilhos:**
-  - [ ] Z2_DATA → dDataBase (Fase 1)
-  - [ ] Z2_HORA → IIF(INCLUI,Time(),...) (Fase 3)
-  - [ ] Z2_USUARIO → RetCodUsr() (Fase 1)
-  - [ ] Z2_USUARIO → Z2_NOMUSR (Fase 2)
-
-- [ ] **SX3 - Validações:**
-  - [ ] Z2_CONTAT → ExistCpo("SZ1",...)
-
-- [ ] **SXB - Consultas:**
-  - [ ] SZ1 (Consulta padrão F3)
-
-- [ ] **Processar Dicionário:**
-  - [ ] Executar CFGX051 ou Processar SX
-
-- [ ] **Testar:**
-  - [ ] Campos virtuais aparecem
-  - [ ] Data/Hora/Usuário preenchem sozinhos
-  - [ ] Sistema recusa contato inexistente
-  - [ ] F3 funciona no Z2_CONTAT
-
----
-
-**Exercício 3 concluído!** 🎉
-
-Dominar **gatilhos, campos virtuais e validações** é essencial para criar sistemas inteligentes e confiáveis no Protheus!
