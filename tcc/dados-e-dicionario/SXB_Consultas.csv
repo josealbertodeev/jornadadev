@@ -1,0 +1,4 @@
+Codigo;Descricao;Alias;Ordem;Campos
+ZZ1;Controle de Fornecimento;ZZ1;1;"ZZ1_CODIGO,ZZ1_NOMEFO,ZZ1_VALCER"
+SA2;Fornecedores;SA2;1;"A2_COD,A2_LOJA,A2_NOME"
+SB1;Produtos;SB1;1;"B1_COD,B1_DESC,B1_UM"

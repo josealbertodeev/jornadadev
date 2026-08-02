@@ -1,0 +1,24 @@
+Tabela;Campo;Tipo;Tamanho;Decimal;Contexto;Titulo;Descricao;Picture;Valid
+ZZ1;ZZ1_FILIAL;C;2;0;Real;Filial;Filial do Sistema;;
+ZZ1;ZZ1_CODIGO;C;6;0;Real;Codigo;Codigo do Controle;@!;
+ZZ1;ZZ1_FORNEC;C;6;0;Real;Fornecedor;Codigo do Fornecedor;@!;"ExistCpo(""SA2"",xFilial(""SA2"")+M->ZZ1_FORNEC+M->ZZ1_LOJAFO,1)"
+ZZ1;ZZ1_LOJAFO;C;2;0;Real;Loja Forn;Loja do Fornecedor;@!;
+ZZ1;ZZ1_NOMEFO;C;40;0;Virtual;Nome Forn;Nome do Fornecedor;@!;
+ZZ1;ZZ1_CERTIF;C;256;0;Real;Dados Cert;Dados do Certificado;;
+ZZ1;ZZ1_VALCER;D;8;0;Real;Val Cert;Validade do Certificado;;M->ZZ1_VALCER >= dDataBase
+ZZ1;ZZ1_TOLERA;N;5;2;Real;Toleranc;Tolerancia Percentual;@E 999.99;M->ZZ1_TOLERA >= 0 .AND. M->ZZ1_TOLERA <= 100
+ZZ1;ZZ1_TOTOK;N;12;2;Real;Qtd OK;Quantidade Conforme;@E 999999999.99;
+ZZ1;ZZ1_TOTNOK;N;12;2;Real;Qtd NOK;Quantidade Nao Conforme;@E 999999999.99;
+ZZ2;ZZ2_FILIAL;C;2;0;Real;Filial;Filial do Sistema;;
+ZZ2;ZZ2_CONFOR;C;6;0;Real;Controle;Controle da ZZ1 (Nao Conformidade);@!;"ExistCpo(""ZZ1"",xFilial(""ZZ1"")+M->ZZ2_CONFOR,1)"
+ZZ2;ZZ2_FORNEC;C;6;0;Real;Fornecedor;Codigo do Fornecedor;@!;
+ZZ2;ZZ2_LOJAFO;C;2;0;Real;Loja Forn;Loja do Fornecedor;@!;
+ZZ2;ZZ2_NOMEFO;C;40;0;Virtual;Nome Forn;Nome do Fornecedor;@!;
+ZZ2;ZZ2_DATA;D;8;0;Real;Data Ocorr;Data da Ocorrencia;;M->ZZ2_DATA <= dDataBase
+ZZ2;ZZ2_HORA;C;5;0;Real;Hora;Hora da Ocorrencia;99:99;
+ZZ2;ZZ2_CODPRO;C;15;0;Real;Produto;Codigo do Produto;@!;"ExistCpo(""SB1"",xFilial(""SB1"")+M->ZZ2_CODPRO,1)"
+ZZ2;ZZ2_QTDOK;N;12;0;Real;Qtd OK;Quantidade Conforme;@E 999999999999;
+ZZ2;ZZ2_QTDNOK;N;12;0;Real;Qtd NOK;Quantidade Nao Conforme;@E 999999999999;
+ZZ2;ZZ2_VLRUNI;N;12;2;Real;Vlr Unit;Valor Unitario;@E 999999999.99;
+ZZ2;ZZ2_TOTOK;N;12;2;Virtual;R$ OK;Valor Total Conforme;@E 999999999.99;
+ZZ2;ZZ2_TOTNOK;N;12;2;Virtual;R$ NOK;Valor Total Nao Conforme;@E 999999999.99;
