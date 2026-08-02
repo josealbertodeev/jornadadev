@@ -77,7 +77,7 @@ FUNCTION Exemplo3_BreakManual()
         QOut("Validando idade: " + Str(nIdade))
 
         IF nIdade < 0
-            BREAK ErrorNew("Idade não pode ser negativa!")
+            BREAK CriarErro("Idade não pode ser negativa!")
         ENDIF
 
         QOut("Idade válida: " + Str(nIdade))
@@ -168,12 +168,12 @@ FUNCTION OperacaoCritica()
     LOCAL nRandom := Seconds() % 2
 
     IF nRandom == 0
-        BREAK ErrorNew("Falha simulada na operação crítica!")
+        BREAK CriarErro("Falha simulada na operação crítica!")
     ENDIF
 
 RETURN 42
 
-FUNCTION ErrorNew(cMessage)
+FUNCTION CriarErro(cMessage)
     LOCAL oError := ErrorNew()
 
     oError:Description := cMessage
