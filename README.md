@@ -7,11 +7,12 @@
 ![AdvPL](https://img.shields.io/badge/AdvPL-Protheus-blue?style=for-the-badge&logo=totvs)
 ![Módulos](https://img.shields.io/badge/Módulos-9-green?style=for-the-badge)
 ![Exercícios](https://img.shields.io/badge/Exercícios-60+-orange?style=for-the-badge)
+![TCC](https://img.shields.io/badge/TCC-Entregue-brightgreen?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Concluído-brightgreen?style=for-the-badge)
 
 **👨‍💻 Desenvolvedor:** José Alberto | **📅 Ano:** 2026
 
-[📚 Sobre](#-sobre-o-projeto) • [🎯 Módulos](#-módulos-do-curso) • [🛠️ Tecnologias](#️-tecnologias) • [📊 Progresso](#-progresso)
+[📚 Sobre](#-sobre-o-projeto) • [🎯 Módulos](#-módulos-do-curso) • [🎓 TCC](#-tcc--projeto-final) • [🛠️ Tecnologias](#️-tecnologias-utilizadas) • [📊 Progresso](#-progresso)
 
 </div>
 
@@ -19,7 +20,7 @@
 
 ## 📚 Sobre o Projeto
 
-Este repositório documenta minha jornada completa no **Programa DEV TOTVS Paulista**, contendo todos os exercícios, projetos e aprendizados ao longo do curso. O material está organizado de forma progressiva, desde os fundamentos da programação até o desenvolvimento avançado de soluções no ecossistema TOTVS Protheus.
+Este repositório documenta minha jornada completa no **Programa DEV TOTVS Paulista**, contendo todos os exercícios, projetos e aprendizados ao longo do curso. O material está organizado de forma progressiva, desde os fundamentos da programação até o desenvolvimento avançado de soluções no ecossistema TOTVS Protheus — culminando no **TCC**, um sistema completo de Controle de Não Conformidades de Fornecedores (ISO 9001).
 
 ### 🎯 Objetivos
 
@@ -176,6 +177,37 @@ Este repositório documenta minha jornada completa no **Programa DEV TOTVS Pauli
 
 ---
 
+## 🎓 TCC — Projeto Final
+
+### 📋 Controle de Não Conformidades de Fornecedores (ISO 9001)
+
+O projeto final do curso: um sistema completo em AdvPL/Protheus para a área de
+Compras, que monitora certificados de qualidade de fornecedores e registra
+ocorrências de não conformidade em cada entrega — aplicando, num projeto real,
+tudo que foi construído módulo a módulo ao longo da jornada.
+
+**📂 [Acessar a pasta do TCC](tcc/)**
+
+| Entrega | Descrição |
+|---|---|
+| 🗄️ **Dicionário completo** | Tabelas `ZZ1` (Controle de Fornecimento) e `ZZ2` (Ocorrências), com campos, índices, validações e gatilhos |
+| 💻 **Rotinas funcionais** | `STTZZ1.PRW` e `STTZZ2.PRW`, via AxCadastro |
+| 📚 **Biblioteca de funções** | `STTZZLIB.PRW`, sem duplicação de código entre rotinas |
+| 🔒 **Tratamento de erros** | `BEGIN SEQUENCE / RECOVER` protegendo toda gravação, com log técnico |
+| 🔍 **Consultas padrão (SXB)** | Busca de fornecedor, produto e controle |
+| 🍴 **Menu no SIGACOM** | `Cadastros > Controle ISO 9001` |
+| 📝 **Documentação completa** | [`README.md`](tcc/README.md) e [`AUTOAVALIACAO.md`](tcc/AUTOAVALIACAO.md) do projeto |
+
+> O ambiente Protheus local apresentou instabilidade na gravação do
+> dicionário durante o desenvolvimento — a entrega segue o caminho
+> alternativo previsto no próprio enunciado do TCC: dicionário como CSV e
+> fontes `.PRW` comentados, sem depender do ambiente rodando. Detalhes
+> completos no [README do TCC](tcc/README.md).
+
+**Status:** ✅ Entregue — 100% dos critérios com peso na rubrica cobertos.
+
+---
+
 ## 🛠️ Tecnologias Utilizadas
 
 | Tecnologia | Descrição | Uso |
@@ -197,6 +229,7 @@ Este repositório documenta minha jornada completa no **Programa DEV TOTVS Pauli
 | **Módulos Concluídos** | 9/9 |
 | **Exercícios Finalizados** | 60+ |
 | **Projetos Práticos** | 5 |
+| **TCC** | ✅ Entregue |
 | **Linhas de Código** | 2000+ |
 
 ### 🎯 Conclusão Geral
@@ -207,6 +240,7 @@ Este repositório documenta minha jornada completa no **Programa DEV TOTVS Pauli
 Módulos Básicos        ████████████████████ 100%
 Módulos Intermediários ████████████████████ 100%
 Módulos Avançados      ████████████████████ 100%
+TCC                    ████████████████████ 100%
 ```
 
 ---
@@ -224,6 +258,13 @@ Módulos Avançados      ██████████████████�
 ├── 📁 modulo-07/          # Fundamentos Protheus
 ├── 📁 modulo-08/          # Cadastros e browses
 ├── 📁 modulo-09/          # Dicionário de dados
+├── 📁 tcc/                # 🎓 Projeto final — Controle de Não Conformidades
+│   ├── 📁 dados-e-dicionario/
+│   ├── 📄 STTZZ1.PRW
+│   ├── 📄 STTZZ2.PRW
+│   ├── 📄 STTZZLIB.PRW
+│   ├── 📄 README.md
+│   └── 📄 AUTOAVALIACAO.md
 └── 📄 README.md           # Este arquivo
 ```
 
@@ -233,7 +274,7 @@ Módulos Avançados      ██████████████████�
 
 ### 📖 Para Estudo
 
-1. **Navegue pelos módulos** na ordem sequencial (01 → 09)
+1. **Navegue pelos módulos** na ordem sequencial (01 → 09) e depois pelo **TCC**
 2. **Leia os arquivos `.md`** para entender a teoria
 3. **Analise os códigos `.prg/.prw`** para ver a implementação prática
 4. **Execute os exemplos** no ambiente TOTVS Protheus
@@ -289,6 +330,9 @@ code .
 
 4. **🎨 Browse com Legendas** ([modulo-08/ex06-legendas-coloridas.prw](modulo-08/ex06-legendas-coloridas.prw))
    - Interface visual com indicadores de status
+
+5. **🎓 TCC — Controle de Não Conformidades de Fornecedores** ([tcc/](tcc/))
+   - Projeto final completo: dicionário, rotinas, gatilhos, validações, tratamento de erros e biblioteca de funções, aplicando tudo que foi aprendido no curso
 
 ---
 
