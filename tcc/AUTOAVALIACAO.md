@@ -1,6 +1,6 @@
 # Autoavaliação — TCC Jornada DEV START
 
-**Aluno:** José Alberto 
+**Aluno:** José Alberto Bezerra Farias
 
 **Projeto:** Controle de Não Conformidades de Fornecedores (ISO 9001)
 
@@ -17,8 +17,24 @@
 - Tratamento de erro com `BEGIN SEQUENCE / RECOVER`, mensagem amigável e log
   técnico em ambas as rotinas.
 - Estrutura de menu no SIGACOM (`Cadastros > Controle ISO 9001`), apontando
-  para `STTZZ1` e `STTZZ2`.
+  para `U_STTZZ1` e `U_STTZZ2` (com o prefixo `U_`, exigido pelo Protheus).
 - Consultas padrão (SXB) para ZZ1, SA2 e SB1.
+
+## Correção após o plantão de dúvidas do professor
+
+O professor publicou dois avisos no fórum da turma que se aplicavam
+diretamente ao meu projeto, e corrigi os dois antes da entrega final:
+
+1. **Gatilho (SX7) em campo virtual não funciona** — meu `SX7_Gatilhos.csv`
+   tinha 2 dos 6 gatilhos apontando para `ZZ1_NOMEFO` e `ZZ2_NOMEFO`
+   (ambos campos virtuais). Corrigido: esses 2 gatilhos foram removidos, e
+   a mesma fórmula `POSICIONE(...)` foi movida para o **Inicializador
+   Padrão** desses campos no `SX3_Campos.csv` (coluna `IniPadrao`), que é
+   o mecanismo correto para autopreencher campo virtual. Ficaram 4
+   gatilhos, todos sobre campos reais.
+2. **Menu sem o prefixo `U_`** — meu `SIGACOM_Menu.csv` apontava para
+   `STTZZ1`/`STTZZ2` sem prefixo, o que geraria "não encontrado" ao
+   clicar. Corrigido para `U_STTZZ1`/`U_STTZZ2`.
 
 ## Revisão e teste manual (dry run)
 
@@ -45,8 +61,20 @@ usados nos `.PRW` batem com os do dicionário em CSV.
   estável.
 - **Legenda colorida (mBrowse) e botão "Ocorrências" entre ZZ1 e ZZ2** —
   optei por `AxCadastro`, mais simples, para garantir que o núcleo mínimo
-  ficasse pronto com segurança dentro do prazo. A função `STTZZ2FLT`já
+  ficasse pronto com segurança dentro do prazo. A função `STTZZ2FLT` já
   deixa a base pronta para essa evolução, se eu tiver tempo de voltar nela.
 - **Integridade referencial na exclusão da ZZ1** e **classe ADVPL (POO)** —
   diferenciais que não cheguei a implementar.
 
+## Autoavaliação por critério (peso da rubrica)
+
+| Critério | Peso | Minha avaliação |
+|---|---|---|
+| Dicionário (tabelas, índices, SX3) | 20% | Completo — estrutura, tipos e validações conferidos campo a campo |
+| Rotinas funcionais | 20% | AxCadastro funcional nas duas tabelas; sem legenda/filtro por botão |
+| Validações de dados | 15% | Completo — todas as 6 regras do enunciado, via SX3 |
+| Gatilhos automáticos | 10% | Completo — as 6 regras descritas no enunciado |
+| Tratamento de erros | 10% | Completo — BEGIN SEQUENCE nas duas rotinas |
+| Biblioteca de funções comuns | 10% | Completo — 5 funções, sem duplicação entre as rotinas |
+| Menu no SIGACOM | 5% | Completo — estrutura em CSV |
+| Documentação | 10% | Completo — este README e autoavaliação |

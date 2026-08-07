@@ -1,3 +1,3 @@
 Modulo;Caminho;Descricao;Funcao;Tipo;Ordem
-SIGACOM;Cadastros > Controle ISO 9001;Controle de Fornecimento;STTZZ1;Programa;1
-SIGACOM;Cadastros > Controle ISO 9001;Ocorrencias de Fornecedores;STTZZ2;Programa;2
+SIGACOM;Cadastros > Controle ISO 9001;Controle de Fornecimento;U_STTZZ1;Programa;1
+SIGACOM;Cadastros > Controle ISO 9001;Ocorrencias de Fornecedores;U_STTZZ2;Programa;2

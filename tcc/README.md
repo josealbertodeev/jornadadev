@@ -1,8 +1,8 @@
 # TCC — Controle de Não Conformidades de Fornecedores (ISO 9001)
 
-**Curso:** TOTVS Paulista — Jornada DEV START (Harbour/AdvPL — Do Zero ao Protheus).
+**Curso:** TOTVS Paulista — Jornada DEV START (Harbour/AdvPL — Do Zero ao Protheus)
 
-**Aluno:** José Alberto  — [josealbertodeev](https://github.com/josealbertodeev)
+**Aluno:** José Alberto Bezerra Farias — [josealbertodeev](https://github.com/josealbertodeev)
 **Entrega individual.**
 
 ## 1. Descrição do sistema
@@ -40,14 +40,17 @@ cheia nos itens de código.
 TCC/
 ├── Dados-e-Dicionario/
 │   ├── SX2_Tabelas.csv     ← cabeçalho das tabelas ZZ1 e ZZ2
-│   ├── SX3_Campos.csv      ← campos, tipos, tamanhos e validações
+│   ├── SX3_Campos.csv      ← campos, tipos, tamanhos, validações e inicializadores padrão
 │   ├── SIX_Indices.csv     ← índices das duas tabelas
-│   ├── SX7_Gatilhos.csv    ← gatilhos automáticos
+│   ├── SX7_Gatilhos.csv    ← gatilhos automáticos (apenas campos reais)
 │   ├── SIGACOM_Menu.csv    ← estrutura de menu no módulo de Compras
 │   └── SXB_Consultas.csv   ← consultas padrão (ZZ1, SA2, SB1)
-├── STTZZ1.PRW              ← rotina de manutenção da ZZ1
-├── STTZZ2.PRW              ← rotina de manutenção da ZZ2 (+ versão filtrada)
-├── STTZZLIB.PRW            ← biblioteca de funções comuns
+├── fontes/
+│   ├── STTZZ1.PRW          ← rotina de manutenção da ZZ1
+│   ├── STTZZ2.PRW          ← rotina de manutenção da ZZ2 (+ versão filtrada)
+│   └── STTZZLIB.PRW        ← biblioteca de funções comuns
+├── evidencias/
+│   └── NOTA.md              ← explica a ausência de prints de tela
 ├── README.md                ← este arquivo
 └── AUTOAVALIACAO.md
 ```
@@ -96,15 +99,22 @@ Resumo dos campos principais:
 - `ZZ2_CODPRO` precisa existir na SB1
 - `ZZ2_DATA` não pode ser uma data futura
 
-## 5. Gatilhos (SX7)
+## 5. Gatilhos (SX7) e campos virtuais
 
-Detalhados em `Dados-e-Dicionario/SX7_Gatilhos.csv`. Resumo:
+Detalhados em `Dados-e-Dicionario/SX7_Gatilhos.csv`. São **4 gatilhos**, todos
+disparando sobre **campos reais** (gatilho SX7 não enxerga campo virtual):
 
-1. `ZZ1_FORNEC` → preenche `ZZ1_NOMEFO` (nome via SA2)
-2-4. `ZZ2_CONFOR` → preenche `ZZ2_FORNEC`, `ZZ2_LOJAFO` e `ZZ2_NOMEFO` (dados
-     puxados da ZZ1 e da SA2)
-5. `ZZ2_DATA` → preenche a data atual na inclusão
-6. `ZZ2_HORA` → preenche a hora atual na inclusão
+1. `ZZ2_CONFOR` → preenche `ZZ2_FORNEC` (via ZZ1)
+2. `ZZ2_CONFOR` → preenche `ZZ2_LOJAFO` (via ZZ1)
+3. `ZZ2_DATA` → preenche a data atual na inclusão
+4. `ZZ2_HORA` → preenche a hora atual na inclusão
+
+Os dois campos **virtuais** que dependem do nome do fornecedor
+(`ZZ1_NOMEFO` e `ZZ2_NOMEFO`) **não** usam gatilho — usam o
+**Inicializador Padrão** do próprio campo (coluna `IniPadrao` do
+`SX3_Campos.csv`), com a mesma fórmula `POSICIONE(...)`. Essa é a forma
+correta no Protheus: gatilho grava em campo real; campo virtual se
+autopreenche via inicializador.
 
 ## 6. Rotinas
 
@@ -150,7 +160,11 @@ Estrutura definida em `Dados-e-Dicionario/SIGACOM_Menu.csv`:
 ```
 Cadastros
  └── Controle ISO 9001
-     ├── Controle de Fornecimento (ZZ1) → USER FUNCTION STTZZ1
-     └── Ocorrências de Fornecedores (ZZ2) → USER FUNCTION STTZZ2
+     ├── Controle de Fornecimento (ZZ1) → U_STTZZ1
+     └── Ocorrências de Fornecedores (ZZ2) → U_STTZZ2
 ```
+
+> A chamada do menu usa o prefixo `U_` (`U_STTZZ1`, `U_STTZZ2`) — é assim
+> que o Protheus invoca uma `USER FUNCTION` a partir de uma entrada de
+> menu. Sem o prefixo, o clique retorna "não encontrado".
 
